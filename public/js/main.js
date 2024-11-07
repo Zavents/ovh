@@ -1,13 +1,20 @@
-  AOS.init({ once: false }); 
-  window.addEventListener("scroll", function() {
-    const navbar = document.querySelector("nav");
-    if (window.scrollY > 100) { 
-      navbar.classList.add("navbar-scrolled");
-    } else {
-      navbar.classList.remove("navbar-scrolled");
-    }
-  });
-  document.addEventListener("DOMContentLoaded", () => {
+
+   window.addEventListener("scroll", function() {
+      const navbar = document.querySelector("nav");
+      const mobileNavOpen = document.body.classList.contains("mobile-nav-open");
+
+      if (window.scrollY > 100 && !mobileNavOpen) {
+        navbar.classList.add("navbar-scrolled");
+      } else {
+        navbar.classList.remove("navbar-scrolled");
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const mobileNav = document.querySelector("[x-on\\:click='mobileNavOpen = !mobileNavOpen']");
+      mobileNav.addEventListener("click", function() {
+        document.body.classList.toggle("mobile-nav-open"); // Lock body scroll on mobile menu open
+      });
     new Swiper('.swiper-container', {
         loop: true, 
         navigation: {
@@ -21,7 +28,7 @@
       });
     const cards = document.querySelectorAll(".card");
     let currentIndex = 0;
-  
+    
     function animateCards() {
       cards.forEach((card, index) => {
         card.classList.remove("scale-125", "bg-[#4A2C2A]");
@@ -72,3 +79,5 @@
       readMoreLink.innerText = "Read more";
     }
   }
+
+  AOS.init({ once: false }); 
