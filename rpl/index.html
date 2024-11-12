@@ -264,7 +264,7 @@
     <span id="moreText" style="display: none;">
       Dalam PPLG, siswa belajar berbagai keterampilan seperti pemrograman, desain antarmuka, pemecahan masalah, dan pengujian perangkat lunak, yang berguna di dunia industri teknologi.
     </span>
-    <a id="readMoreLink" href="javascript:void(0);" onclick="if (!window.__cfRLUnblockHandlers) return false; toggleReadMore()" class=" hover:underline text-blue-300" data-cf-modified-84d675272a96fd9e79501afb-="">Read more</a>
+    <a id="readMoreLink" href="javascript:void(0);" onclick="toggleReadMore()" class="hover:underline text-blue-300">Read more</a>
   </p>
   <style>
     @keyframes flip-icon {
@@ -284,7 +284,19 @@
   }
   
   </style>
+  <script>   
+    function toggleReadMore() {
+      const moreText = document.getElementById("moreText");
+      const readMoreLink = document.getElementById("readMoreLink");
   
+      if (moreText.style.display === "none") {
+        moreText.style.display = "inline";
+        readMoreLink.innerText = "Read less";
+      } else {
+        moreText.style.display = "none";
+        readMoreLink.innerText = "Read more";
+      }
+    }</script>
   
     <div class="absolute inset-0 bg-cover bg-center blud-md" style="background-image: url('../publicrpl/images/tujuan/tujuan-bg.jpg');">
       
