@@ -1146,7 +1146,7 @@ module.exports = {
     extend: [],
   },
   content: [
-    './**/*.html', 
+    './rpl/**/*.html', 
     './src/**/*.{js,ts,jsx,tsx}',
   ],
   plugins: [],
