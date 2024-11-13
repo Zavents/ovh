@@ -60,105 +60,7 @@
         }
       }
       </script>
-      <script>
-        AOS.init({ once: false }); 
-        window.addEventListener("scroll", function() {
-          const navbar = document.querySelector("nav");
-          if (window.scrollY > 100) { 
-            navbar.classList.add("navbar-scrolled");
-          } else {
-            navbar.classList.remove("navbar-scrolled");
-          }
-        });
-        document.addEventListener("DOMContentLoaded", () => {
-          new Swiper('.swiper-container', {
-              loop: true, 
-              navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-              },
-              autoplay: {
-                delay: 5000, 
-                disableOnInteraction: false,
-              },
-            });
-          const cards = document.querySelectorAll(".card");
-          let currentIndex = 0;
-        
-          function animateCards() {
-            cards.forEach((card, index) => {
-              card.classList.remove("scale-125", "bg-[#4A2C2A]");
-              card.querySelector(".icon").classList.remove("active-icon");
-              card.querySelector("h3").classList.remove("active-title");
-              card.querySelector("p").classList.remove("active-text");
-        
-              if (index === currentIndex) {
-                card.classList.add("scale-125", "bg-[#4A2C2A]");
-                card.querySelector(".icon").classList.add("active-icon");
-                card.querySelector("h3").classList.add("active-title");
-                card.querySelector("p").classList.add("active-text");
-                const img = card.querySelector(".icon");
-                const h3 = card.querySelector("h3");
-                const p = card.querySelector("p");
       
-                img.classList.remove("animate__animated", "animate__flipInX");
-                h3.classList.remove("animate__animated", "animate__fadeInLeft");
-                p.classList.remove("animate__animated", "animate__fadeInUp");
-        
-                void img.offsetWidth; 
-                void h3.offsetWidth;
-                void p.offsetWidth;
-        
-                setTimeout(() => {
-                  img.classList.add("animate__animated", "animate__flipInX");
-                  h3.classList.add("animate__animated", "animate__fadeInLeft");
-                  p.classList.add("animate__animated", "animate__fadeInUp");
-                }, 0);
-              }
-            });
-        
-            currentIndex = (currentIndex + 1) % cards.length;
-          }
-      
-          setInterval(animateCards, 5000);
-        });
-        
-        function toggleReadMore() {
-          const moreText = document.getElementById("moreText");
-          const readMoreLink = document.getElementById("readMoreLink");
-      
-          if (moreText.style.display === "none") {
-            moreText.style.display = "inline";
-            readMoreLink.innerText = "Read less";
-          } else {
-            moreText.style.display = "none";
-            readMoreLink.innerText = "Read more";
-          }
-        }
-       
-          // JavaScript to adjust data-aos-offset on mobile
-          function adjustAOSForMobile() {
-            const elements = document.querySelectorAll('[data-aos-offset]');
-            
-            elements.forEach(element => {
-              if (window.innerWidth <= 768) { // Mobile breakpoint
-                element.setAttribute('data-aos-offset', '0'); // Disable offset on mobile
-              } else {
-                element.setAttribute('data-aos-offset', '400'); // Original offset on desktop
-              }
-            });
-            
-            AOS.refresh(); // Refresh AOS to apply changes
-          }
-      
-          // Run on initial load
-          adjustAOSForMobile();
-      
-          // Run on window resize
-          window.addEventListener('resize', adjustAOSForMobile);
-        
-        
-      </script>
 
 
     <style>
@@ -179,12 +81,111 @@
       }
     </style>
 
+    <script>
+      AOS.init({ once: false }); 
+      window.addEventListener("scroll", function() {
+        const navbar = document.querySelector("nav");
+        if (window.scrollY > 100) { 
+          navbar.classList.add("navbar-scrolled");
+        } else {
+          navbar.classList.remove("navbar-scrolled");
+        }
+      });
+      document.addEventListener("DOMContentLoaded", () => {
+        new Swiper('.swiper-container', {
+            loop: true, 
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+              delay: 5000, 
+              disableOnInteraction: false,
+            },
+          });
+        const cards = document.querySelectorAll(".card");
+        let currentIndex = 0;
+      
+        function animateCards() {
+          cards.forEach((card, index) => {
+            card.classList.remove("scale-125", "bg-[#4A2C2A]");
+            card.querySelector(".icon").classList.remove("active-icon");
+            card.querySelector("h3").classList.remove("active-title");
+            card.querySelector("p").classList.remove("active-text");
+      
+            if (index === currentIndex) {
+              card.classList.add("scale-125", "bg-[#4A2C2A]");
+              card.querySelector(".icon").classList.add("active-icon");
+              card.querySelector("h3").classList.add("active-title");
+              card.querySelector("p").classList.add("active-text");
+              const img = card.querySelector(".icon");
+              const h3 = card.querySelector("h3");
+              const p = card.querySelector("p");
+    
+              img.classList.remove("animate__animated", "animate__flipInX");
+              h3.classList.remove("animate__animated", "animate__fadeInLeft");
+              p.classList.remove("animate__animated", "animate__fadeInUp");
+      
+              void img.offsetWidth; 
+              void h3.offsetWidth;
+              void p.offsetWidth;
+      
+              setTimeout(() => {
+                img.classList.add("animate__animated", "animate__flipInX");
+                h3.classList.add("animate__animated", "animate__fadeInLeft");
+                p.classList.add("animate__animated", "animate__fadeInUp");
+              }, 0);
+            }
+          });
+      
+          currentIndex = (currentIndex + 1) % cards.length;
+        }
+    
+        setInterval(animateCards, 5000);
+      });
+      
+      function toggleReadMore() {
+        const moreText = document.getElementById("moreText");
+        const readMoreLink = document.getElementById("readMoreLink");
+    
+        if (moreText.style.display === "none") {
+          moreText.style.display = "inline";
+          readMoreLink.innerText = "Read less";
+        } else {
+          moreText.style.display = "none";
+          readMoreLink.innerText = "Read more";
+        }
+      }
+     
+        // JavaScript to adjust data-aos-offset on mobile
+        function adjustAOSForMobile() {
+          const elements = document.querySelectorAll('[data-aos-offset]');
+          
+          elements.forEach(element => {
+            if (window.innerWidth <= 768) { // Mobile breakpoint
+              element.setAttribute('data-aos-offset', '0'); // Disable offset on mobile
+            } else {
+              element.setAttribute('data-aos-offset', '400'); // Original offset on desktop
+            }
+          });
+          
+          AOS.refresh(); // Refresh AOS to apply changes
+        }
+    
+        // Run on initial load
+        adjustAOSForMobile();
+    
+        // Run on window resize
+        window.addEventListener('resize', adjustAOSForMobile);
+      
+      
+    </script>
 
 </head>
-<body class="antialiased bg-body text-body font-body" loading="lazy " decoding="async" decoding="ansync" style="background-image: url(../publicrpl/images/background.gif);">
- 
+  <body class="antialiased bg-body text-body font-body" loading="lazy " decoding="async" decoding="ansync" style="background-image: url(../publicrpl/images/background.gif);">
+   
   <section x-data="{ mobileNavOpen: false }" 
-  class="overflow-hidden bg-cover bg-center h-screen" 
+  class="overflow-hidden bg-cover bg-center min-h-screen" 
   style="background-image: url('../publicrpl/images/bg-rpl.webp');
   background-size: cover;
   background-position: center;
@@ -192,10 +193,7 @@
   padding: 0;
   margin: 0;
   ">
-
-  <div class="absolute bottom-0 left-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 w-full h-96 "></div>
-  
-  <div class="absolute inset-0 bg-black opacity-80"></div>
+  <div class="absolute inset-0 bg-black/70 min-h-screen" style="height: 200vh; /* This sets the section to cover the full viewport height */"></div>
   
   <nav id="navbar" class="fixed z-50 flex items-center justify-between w-screen py-4 mx-auto transition-all duration-500   flex-nowrap shadow-dark-mild lg:flex-wrap lg:justify-start backdrop-blur-0" data-twe-navbar-ref>
     <div class="flex flex-wrap items-center justify-between w-full px-8 mx-auto md:px-16">
@@ -310,48 +308,7 @@
   
   
   
-  <script>
-      const cards = document.querySelectorAll(".card");
-      let currentIndex = 0;
-    
-      function animateCards() {
-        cards.forEach((card, index) => {
-          card.classList.remove("scale-125", "bg-[#4A2C2A]");
-          card.querySelector(".icon").classList.remove("active-icon");
-          card.querySelector("h3").classList.remove("active-title");
-          card.querySelector("p").classList.remove("active-text");
-    
-          if (index === currentIndex) {
-            card.classList.add("scale-125", "bg-[#4A2C2A]");
-            card.querySelector(".icon").classList.add("active-icon");
-            card.querySelector("h3").classList.add("active-title");
-            card.querySelector("p").classList.add("active-text");
-            const img = card.querySelector(".icon");
-            const h3 = card.querySelector("h3");
-            const p = card.querySelector("p");
   
-            img.classList.remove("animate__animated", "animate__flipInX");
-            h3.classList.remove("animate__animated", "animate__fadeInLeft");
-            p.classList.remove("animate__animated", "animate__fadeInUp");
-    
-            void img.offsetWidth; 
-            void h3.offsetWidth;
-            void p.offsetWidth;
-    
-            setTimeout(() => {
-              img.classList.add("animate__animated", "animate__flipInX");
-              h3.classList.add("animate__animated", "animate__fadeInLeft");
-              p.classList.add("animate__animated", "animate__fadeInUp");
-            }, 0);
-          }
-        });
-    
-        currentIndex = (currentIndex + 1) % cards.length;
-      }
-  
-      setInterval(animateCards, 5000);
-  
-    </script>
   <section id="about">
   <section class="relative py-12 bg-white/50 pb-20  pt-20 p-4" style="overflow: hidden !important;" >
     <h1 class="max-w-5xl mb-4 text-4xl tracking-tight leading-none md:text-5xl xl:text-6xl text-center text-white  mx-auto pb-10 relative z-20" data-aos="zoom-out-down">
@@ -382,24 +339,10 @@
   }
   
   </style>
-  <script>   
-    function toggleReadMore() {
-      const moreText = document.getElementById("moreText");
-      const readMoreLink = document.getElementById("readMoreLink");
   
-      if (moreText.style.display === "none") {
-        moreText.style.display = "inline";
-        readMoreLink.innerText = "Read less";
-      } else {
-        moreText.style.display = "none";
-        readMoreLink.innerText = "Read more";
-      }
-    }</script>
   
     <div class="absolute inset-0 bg-cover bg-center blud-md" style="background-image: url('../publicrpl/images/tujuan/tujuan-bg.jpg');">
       
-  <div class="absolute top-0 left-0 bg-gradient-to-b from-black via-transparent to-transparent z-10 w-full h-96 "></div>
-  
       <div class="absolute inset-0 bg-black opacity-80"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
   
@@ -432,7 +375,7 @@
               v35.635h36.411v-35.656c12.942-2.481,24.936-7.507,35.484-14.625l25.152,25.152l25.734-25.648l-25.195-25.173
               c7.118-10.505,12.123-22.541,14.625-35.505h35.678l0,0v-36.368H422.399z M328.437,281.693c-21.894,0-39.669-17.688-39.669-39.604
               c0-21.894,17.774-39.69,39.669-39.69c21.916,0,39.604,17.774,39.604,39.69C368.041,264.026,350.309,281.693,328.437,281.693z"/>
-        </svg>
+      </svg>
         <div class="text-center">
             <h3 class="text-xs  md:text-xl text-white">Mobile Apps</h3>
             <p class="text-gray-200 mt-2 text-xs md:text-base  ">Siswa diharapkan mampu membuat aplikasi mobile berbasis sistem operasi Android untuk dioperasikan di smartphone masing-masing.</p>
@@ -502,6 +445,7 @@
     </div>
   </section>
   </section>
+  
   
   
 
@@ -758,6 +702,7 @@
                     Pemrograman Web dan Perangkat Bergerak,
                   </li>
                   <li class="flex-2">
+                    
                     Produk Kreatif dan Kewirausahaan
                   </li>
                 </ul>
@@ -774,8 +719,6 @@
 <script src="../publicrpl/js/aos.js"></script>
 <script src="../publicrpl/js/tw-ele.js"></script>
 <script src="../publicrpl/js/main.js"></script>
-
-<script src="https://zavents.ovh/public/js/main.js"></script>
 <script src="../publicrpl/js/alpine.js" defer></script>
 </body>
 </html>
