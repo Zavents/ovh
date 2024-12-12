@@ -185,99 +185,56 @@
 </head>
   <body class="antialiased bg-body text-body font-body" loading="lazy " decoding="async" decoding="ansync" style="background-image: url(../publicrpl/images/background.gif);">
    
-  <div class="preloader fixed inset-0 flex items-center justify-center bg-black z-50">
-    <div class="loading">
-        <img src="../publicrpl/images//preload.gif" alt="Loading icon" class="w-16 h-16">
-    </div>
-</div>
-<script>
-    // Function to hide preloader after all assets are loaded
-    window.onload = function () {
-        document.querySelector('.preloader').style.display = 'none';
-    };
 
-    // Run on window resize
-    window.addEventListener('resize', adjustAOSForMobile);
-</script>
-  <section x-data="{ mobileNavOpen: false }"  
-  class="min-h-screen overflow-hidden bg-center bg-cover" 
-  style="background-image: url('../publicrpl/images/bg-rpl.webp');
-  background-size: cover;
-  background-position: center;
-  
-  padding: 0;
-  margin: 0;
-  ">
-  <div class="absolute inset-0 min-h-screen bg-black/70" style="height: 200vh; /* This sets the section to cover the full viewport height */"></div>
-  
-  <nav id="navbar" class="fixed z-40 flex items-center justify-between w-screen py-4 mx-auto transition-all duration-500 flex-nowrap shadow-dark-mild lg:flex-wrap lg:justify-start backdrop-blur-0" data-twe-navbar-ref>
-    <div class="flex flex-wrap items-center justify-between w-full px-8 mx-auto md:px-16">
+  <section x-data="{ mobileNavOpen: false }"  class="min-h-screen overflow-hidden bg-center bg-cover" style="background-image: url('../publicrpl/images/bg-rpl.webp'); background-size: cover; background-position: center; padding: 0; margin: 0; ">
+    <div class="absolute inset-0 min-h-screen bg-black/70" style="height: 200vh; /* This sets the section to cover the full viewport height */"></div>
+    <nav id="navbar" class="fixed z-40 flex items-center justify-between w-screen py-4 mx-auto transition-all duration-500 flex-nowrap shadow-dark-mild lg:flex-wrap lg:justify-start backdrop-blur-0" data-twe-navbar-ref>
+      <div class="flex flex-wrap items-center justify-between w-full px-8 mx-auto md:px-16">
         <div class="">
-            <a class="text-xl text-white transition-transform duration-300 ease-in rounded-10 hover:scale-125" href="javascript:void(0);">
-              <img class="transition-transform duration-300 ease-in rounded-10  hover:scale-125 " src="../publicrpl/images/icon/pplg-white-icon.svg" style="width: 100px;" alt="Logo PPLG"></a>
-        </div>
-    <button
-        class="relative z-40 block px-2 text-white bg-transparent border-0 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 lg:hidden"
-        type="button"
-        data-twe-collapse-init
-        data-twe-target="#navbarSupportedContent14"
-        aria-controls="navbarSupportedContent14"
-        aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span
-        class="[&>svg]:w-7 [&>svg]:stroke-white dark:[&>svg]:stroke-neutral-200">
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor">
-            <path
-            fill-rule="evenodd"
-            d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
-            clip-rule="evenodd" />
-        </svg>
-        </span>
-    </button>
-  
-        <div
-            class="!visible mt-2 hidden flex-grow basis-[100%] items-center lg:mt-0 lg:!flex lg:basis-auto justify-center"
-            id="navbarSupportedContent14"
-            data-twe-collapse-item>
-            <ul class="flex flex-col justify-center lg:rounded-full lg:bg-white list-style-none lg:flex-row ms-auto lg:bg-opacity-10" data-twe-navbar-nav-ref>
-
-                <li class="py-2 ps-1" data-twe-nav-item-ref>
-                    <a class="px-3 py-2 text-lg tracking-wider text-white transition-transform hover:text-gray-300 lg:rounded-full lg:hover:bg-white lg:hover:bg-opacity-20" 
-                    aria-current="page" href="#about"data-twe-nav-link-ref>About</a>
-                </li>
-                <li class="py-2 ps-1" data-twe-nav-item-ref>
-                    <a class="px-3 py-2 text-lg tracking-wider text-white transition-transform rounded-full hover:text-gray-300 hover:bg-white hover:bg-opacity-20" 
-                    aria-current="page" href="#guru"data-twe-nav-link-ref>Guru</a>
-                </li>
-                <li class="py-2 ps-1" data-twe-nav-item-ref>
-                    <a class="px-3 py-2 text-lg tracking-wider text-white transition-transform rounded-full hover:text-gray-300 hover:bg-white hover:bg-opacity-20" 
-                    aria-current="page" href="#fasilitas"data-twe-nav-link-ref>Fasilitas</a>
-                </li>
-                <li class="py-2 ps-1" data-twe-nav-item-ref>
-                    <a class="px-3 py-2 text-lg tracking-wider text-white transition-transform rounded-full hover:text-gray-300 hover:bg-white hover:bg-opacity-20" 
-                    aria-current="page" href="#kelas"data-twe-nav-link-ref>Kelas</a>
-                </li>
-                <li class="py-2 ps-1" data-twe-nav-item-ref>
-                    <a class="px-3 py-2 text-lg tracking-wider text-white transition-transform rounded-full hover:text-gray-300 hover:bg-white hover:bg-opacity-20" 
-                    aria-current="page" href="#website"data-twe-nav-link-ref>Website</a>
-                </li>
-                <li class="py-2 ps-1" data-twe-nav-item-ref>
-                  <a class="px-3 py-2 text-lg tracking-wider text-white transition-transform rounded-full hover:text-gray-300 hover:bg-white hover:bg-opacity-20" 
-                  aria-current="page" href="#galeri"data-twe-nav-link-ref>Galeri</a>
-              </li>
-              </ul>
-  
-              
-              <!-- Dropdown -->
+          <a class="text-xl text-white transition-transform duration-300 ease-in rounded-10 hover:scale-125" href="javascript:void(0);">
+            <img class="transition-transform duration-300 ease-in rounded-10  hover:scale-125 " src="../publicrpl/images/icon/pplg-white-icon.svg" style="width: 100px;" alt="Logo PPLG"></a>
+          </div>
+          <button class="relative z-40 block px-2 text-white bg-transparent border-0 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 lg:hidden" type="button" data-twe-collapse-init data-twe-target="#navbarSupportedContent14" aria-controls="navbarSupportedContent14" aria-expanded="false" aria-label="Toggle navigation">
+            <span
+              class="[&>svg]:w-7 [&>svg]:stroke-white dark:[&>svg]:stroke-neutral-200">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"> 
+                <path fill-rule="evenodd" d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+              </svg>
+            </span>
+          </button>
+        <div class="!visible mt-2 hidden flex-grow basis-[100%] items-center lg:mt-0 lg:!flex lg:basis-auto justify-center" id="navbarSupportedContent14" data-twe-collapse-item>
+          <ul class="flex flex-col justify-center lg:rounded-full lg:bg-white list-style-none lg:flex-row ms-auto lg:bg-opacity-10" data-twe-navbar-nav-ref>
+          <li class="py-2 ps-1" data-twe-nav-item-ref>
+                <a class="px-3 py-2 text-lg tracking-wider text-white transition-transform hover:text-gray-300 lg:rounded-full lg:hover:bg-white lg:hover:bg-opacity-20" 
+                aria-current="page" href="#about"data-twe-nav-link-ref>About</a>
+          </li>
+          <li class="py-2 ps-1" data-twe-nav-item-ref>
+                <a class="px-3 py-2 text-lg tracking-wider text-white transition-transform rounded-full hover:text-gray-300 hover:bg-white hover:bg-opacity-20" 
+                aria-current="page" href="#guru"data-twe-nav-link-ref>Guru</a>
+          </li>
+          <li class="py-2 ps-1" data-twe-nav-item-ref>
+                <a class="px-3 py-2 text-lg tracking-wider text-white transition-transform rounded-full hover:text-gray-300 hover:bg-white hover:bg-opacity-20" 
+                aria-current="page" href="#fasilitas"data-twe-nav-link-ref>Fasilitas</a>
+          </li>
+          <li class="py-2 ps-1" data-twe-nav-item-ref>
+                <a class="px-3 py-2 text-lg tracking-wider text-white transition-transform rounded-full hover:text-gray-300 hover:bg-white hover:bg-opacity-20" 
+                aria-current="page" href="#kelas"data-twe-nav-link-ref>Kelas</a>
+          </li>
+          <li class="py-2 ps-1" data-twe-nav-item-ref>
+                <a class="px-3 py-2 text-lg tracking-wider text-white transition-transform rounded-full hover:text-gray-300 hover:bg-white hover:bg-opacity-20" 
+                aria-current="page" href="#website"data-twe-nav-link-ref>Website</a>
+          </li>
+          <li class="py-2 ps-1" data-twe-nav-item-ref>
+              <a class="px-3 py-2 text-lg tracking-wider text-white transition-transform rounded-full hover:text-gray-300 hover:bg-white hover:bg-opacity-20" 
+              aria-current="page" href="#galeri"data-twe-nav-link-ref>Galeri</a>
+            </li>
+          </ul>
           <div class=" ms-auto" data-twe-dropdown-ref>
             <button class=" block py-3.5 uppercase text-xs tracking-px text-white font-bold bg-white bg-opacity-20 hover:bg-opacity-10  ease-in rounded-10 transition-transform duration-300 hover:scale-125 px-2">smk negeri 2</button>
           </div>
         </div>
-    </div>
-  </nav>
+      </div>
+    </nav>
     
     <div class="relative container mx-auto px-4 !min-h-screen   pb-20">
       <div class="relative flex flex-col items-center justify-center min-h-screen -m-6 xl:flex-row lg:pt-32 pb-36 ">
@@ -319,6 +276,7 @@
         </div>
       </div>
     </div>
+ 
   </section>
   
   
@@ -521,7 +479,7 @@
           <a href="javascript:void(0)" class="block h-full border-2 border-blue-400 shadow-2xl bg-gray-700/60 rounded-2xl shadow-blue-400/50">
             <img data-fancybox="guru" data-caption="Gambar Guru Sri Wahyuni S.Kom M.Kom" loading="lazy" decoding="async" alt="Gambar Guru Sri Wahyuni S.Kom M.Kom" src="../publicrpl/images/guru/guru-yuni.webp" class="object-cover object-top w-full h-44 sm:h-80 lg:h-96 rounded-t-2xl rounded-b-3xl">
             <h3 class="px-2 mt-4 text-base font-bold text-white sm:text-sm md:text-lg">
-              Sri Wahyuni, S.Pd.,M.Pd
+              Sri Wahyuni S.Pd.,M.Pd
             </h3>
             <p class="max-w-sm px-2 py-3 pb-5 mt-2 text-xs text-gray-300 md:text-base">
               Mengajar Mata Pelajaran : <br> PEMOGRAMAN WEB, P.BERGERAK, dan MPP 
@@ -821,7 +779,7 @@
             style="border: 3px solid rgb(126, 118, 118);" data-aos-duration="1000" data-aos="fade-right">
             <img loading="lazy" decoding="async" class="absolute top-0 left-0 object-cover w-full h-44 md:h-72  " 
               src="../publicrpl/images/kelas-rpl/kelas-rpl-10-ppl-3.webp" alt="gambar kelas 10">
-            <a href="../kelas10.html" loading="lazy" decoding="async"  >
+            <a href="./kelas10.html" loading="lazy" decoding="async"  >
               <div class="relative">
                 <div class="flex items-center justify-between mb-20">
                   <span class="transition duration-100 transform group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1"></span>
@@ -845,7 +803,7 @@
           style="border: 3px solid rgb(126, 118, 118);" data-aos-duration="1000" data-aos="fade-in">
           <img loading="lazy" decoding="async" class="absolute top-0 left-0 object-cover w-full h-44 md:h-72  " 
             src="../publicrpl/images/kelas-rpl/kelas-rpl-11-ppl-2.webp" alt="gambar kelas 11">
-          <a href="../kelas11.html" loading="lazy" decoding="async"  >
+          <a href="./kelas11.html" loading="lazy" decoding="async"  >
             <div class="relative">
               <div class="flex items-center justify-between mb-20">
                 <span class="transition duration-100 transform group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1"></span>
@@ -869,7 +827,7 @@
         style="border: 3px solid rgb(126, 118, 118);" data-aos-duration="1000" data-aos="fade-right">
         <img loading="lazy" decoding="async" class="absolute top-0 left-0 object-cover w-full h-44 md:h-72  " 
           src="../publicrpl/images/kelas-rpl/kelas-rpl-11-ppl-2.webp" alt="gambar kelas 11">
-        <a href="../kelas11.html" loading="lazy" decoding="async"  >
+        <a href="./kelas11.html" loading="lazy" decoding="async"  >
           <div class="relative">
             <div class="flex items-center justify-between mb-20">
               <span class="transition duration-100 transform group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1"></span>
@@ -888,7 +846,7 @@
         style="border: 3px solid rgb(126, 118, 118);" data-aos-duration="1000" data-aos="fade-left">
         <img loading="lazy" decoding="async" class="absolute top-0 left-0 object-cover w-full h-44 md:h-72  " 
           src="../publicrpl/images/kelas-rpl/kelas-rpl-11-ppl-2.webp" alt="gambar kelas 11">
-        <a href="../kelas11.html" loading="lazy" decoding="async"  >
+        <a href="./kelas11.html" loading="lazy" decoding="async"  >
           <div class="relative">
             <div class="flex items-center justify-between mb-20">
               <span class="transition duration-100 transform group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1"></span>
@@ -910,7 +868,7 @@
             style="border: 3px solid rgb(126, 118, 118);" data-aos-duration="1000" data-aos="fade-left">
             <img loading="lazy" decoding="async" class="absolute top-0 left-0 object-cover w-full h-44 md:h-72  " 
               src="../publicrpl/images/kelas-rpl/kelas-rpl-12-3.webp" alt="gambar kelas 12">
-            <a href="../kelas12.html" loading="lazy" decoding="async"  >
+            <a href="./kelas12.html" loading="lazy" decoding="async"  >
               <div class="relative">
                 <div class="flex items-center justify-between mb-20">
                   <span class="transition duration-100 transform group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1"></span>
@@ -929,7 +887,7 @@
     
     <!-- <div class="relative w-11/12 px-2 mx-auto md:px-10">
       <div class="w-full text-center">
-        <a href="../index.html">
+        <a href="./index.html">
           <button class="relative px-4 py-2 overflow-hidden font-medium text-blue-400 duration-300 border border-b-4 border-blue-400 rounded-md outline-none bg-blue-950 hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 group">
             <span class="bg-blue-400 shadow-blue-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
             Kembali Ke Halaman Utama?
@@ -969,8 +927,8 @@
           <img loading="lazy" decoding="async" class=" h-52 !md:h-[400px] lg:h-[450px] object-cover" src="../publicrpl/images/website/website4.webp" alt="Website Kelas RPL" width="100%" height="100%">
         </swiper-slide>
         <swiper-slide class ="!-mr-2 lg:!mr-[30px]">
-          <p class="absolute bottom-0 left-0 z-40 ml-2 text-xs tracking-widest text-left text-white uppercase lg:top-0 font-bebas md:ml-7 lg:mt-7 mb-7 sm:text-xl lg:text-4xl lg:mb-2">McLaren - Faiz Naufal </p>
-            <a href="https://paisnaufl.github.io/McLaren-Web-/" target="_blank"> 
+          <p class="absolute bottom-0 left-0 z-40 ml-2 text-xs tracking-widest text-left text-white uppercase lg:top-0 font-bebas md:ml-7 lg:mt-7 mb-7 sm:text-xl lg:text-4xl lg:mb-2">New Jeans - Faiz Naufal </p>
+            <a href="https://paisnaufl.github.io/NJWEB/" target="_blank"> 
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
               class="absolute top-0 right-0 z-40 w-6 h-6 mt-4 text-sm duration-200 hover:text-white/80 hover:scale-110 text-white/50 lg:text-lg mr-7 lg:mt-7" 
@@ -1218,7 +1176,7 @@
       
       <!-- <div class="relative w-11/12 px-2 mx-auto md:px-10">
       <div class="w-full text-center">
-        <a href="../index.html">
+        <a href="./index.html">
           <button class="relative px-4 py-2 overflow-hidden font-medium text-blue-400 duration-300 border border-b-4 border-blue-400 rounded-md outline-none bg-blue-950 hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 group">
             <span class="bg-blue-400 shadow-blue-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
             Kembali Ke Halaman Utama?
@@ -1257,13 +1215,13 @@
               <a href="#fasilitas"  class="text-white hover:text-gray-400">Fasilitas</a>
           </li>
           <li>
-              <a href="../kelas.html" class="text-white hover:text-gray-400">Kelas</a>
+              <a href="./kelas.html" class="text-white hover:text-gray-400">Kelas</a>
           </li>
           <li>
               <a href="#website"  class="text-white hover:text-gray-400">Website</a>
           </li>
           <li>
-              <a href="../galeri.html"  class="text-white hover:text-gray-400">Galeri</a>
+              <a href="./galeri.html"  class="text-white hover:text-gray-400">Galeri</a>
           </li>
         </ul>
         <div class="flex items-center justify-center mb-10 space-x-10">
@@ -1348,15 +1306,15 @@
     backToTopBtn.addEventListener("click", backToTop);
   </script>
 
- 
-<script src="../publicrpl/js/alpine.js" defer></script>
-<script src="../publicrpl/js/aos.js"></script>
-<script src="../publicrpl/js//fancybox.js" defer></script>
-<script src="../publicrpl/js/galeri.js" defer></script>
-<script src="../publicrpl/js/main.js" defer></script>
-<script src="../publicrpl/js/swiper.js" defer></script>
-<script src="../publicrpl/js/swiperebudnel.js" defer></script>
-<script src="../publicrpl/js/tw-ele.js" defer></script>
+  <script src="../publicrpl/js/alpine.js"></script>
+  <script src="../publicrpl/js/aos.js"></script>
+  <script src="../publicrpl/js/bundle.min.js"></script>  
+  <script src="../publicrpl/js/fancybox.js"></script>  
+  <script src="../publicrpl/js/galeri.js"></script>  
+  <script src="../publicrpl/js/main.js"></script>  
+  <script src="../publicrpl/js/swiper.js"></script>
+  <script src="../publicrpl/js/swiperebudnel.js"></script>
+  <script src="../publicrpl/js/tw-ele.js"></script>
 </body>
 </html>
 
